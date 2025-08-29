@@ -1,0 +1,19 @@
+public class Producto {
+    public String nombre;
+    public double precioBase;
+    public double descuento;
+
+    public Producto() {
+    }
+
+    public Producto(String nombre, double precioBase, double descuento) {
+        this.nombre = nombre;
+        this.precioBase = precioBase;
+        this.descuento = descuento;
+    }
+
+    public double calcularPrecioFinal(String nombre, double precioBase, double descuento){
+        double totalDescuento = precioBase*descuento/100;
+        return precioBase - totalDescuento;
+    }
+}
