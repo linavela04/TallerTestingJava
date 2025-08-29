@@ -1,0 +1,31 @@
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class ProductoTest {
+    private Producto producto;
+
+    @Before
+    public void setUp(){
+        producto = new Producto();
+    }
+
+    @Test
+    public void testDescuento(){
+        double resultado = producto.calcularPrecioFinal("Producto1",2000.0,0.0);
+        assertEquals(2000.0,resultado,0.001);
+    }
+    @Test
+    public void testDescuento1(){
+        double resultado = producto.calcularPrecioFinal("Producto1",2000.0,10.0);
+        assertEquals(1800.0,resultado,0.001);
+    }
+    @Test
+    public void testDescuento2(){
+        double resultado = producto.calcularPrecioFinal("Producto1",2000.0,50.0);
+        assertEquals(1000.0,resultado,0.001);
+    }
+
+
+}
